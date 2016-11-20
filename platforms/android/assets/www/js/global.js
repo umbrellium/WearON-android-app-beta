@@ -116,6 +116,16 @@ var ReadApi_2;
 var channelID_2;
 var channelField_2;
 var data_feed_2_reading;
+// data_feed_3
+var get_data_feed_3 = false; // toggle check for opening data feed retrieve panel
+var get_data_3_success = false; // check whether data feed is successfully retrieved from thingspeak
+var show_panel_data_feed_3 = false; // toggle check for opening logic connection panel for data feed
+var logic_constructed_data_feed_3 = false; // check whether logic is constructed successfully for data feed 1
+var connect_key_info_3;
+var ReadApi_3;
+var channelID_3;
+var channelField_3;
+var data_feed_3_reading;
 
 //global connectivity panel global variables
 var get_thingful = false; // toggle check for opening get thingful thing panel
@@ -267,6 +277,20 @@ function checkVisualStatus() {
         }
       }
 
+      if (get_data_feed_3 == true) {
+        if ((logic_constructed_D9 == false) && (logic_constructed_D10 == false)) {
+          $('#panel_title').css("color", "black");
+          $('#panel_title').html("Retrieve data feed from another WearON device");
+          $('#panel_image').attr("src", "img/not_connected_to_outputs_connected_to_thingspeak_failed_cross_connectivity.png");
+        }
+      } else { //if get_data_feed_1 = false
+        if ((logic_constructed_D9 == false) && (logic_constructed_D10 == false)) {
+          $('#panel_title').css("color", "black");
+          $('#panel_title').html("Use Cross Connecitity Control Panel to control data from connected device");
+          $('#panel_image').attr("src", "img/connected_to_device_and_thingspeak.png");
+        }
+      }
+
       if (get_data_1_success == true) {
         $('#panel_title').css("color", "black");
         $('#panel_title').html("Make sure either D9 or D10 is enabled to set Logic to connect data feed to output");
@@ -274,6 +298,12 @@ function checkVisualStatus() {
       }
 
       if (get_data_2_success == true) {
+        $('#panel_title').css("color", "black");
+        $('#panel_title').html("Make sure either D9 or D10 is enabled to set Logic to connect data feed to output");
+        $('#panel_image').attr("src", "img/not_connected_to_outputs_connected_to_thingspeak_success_cross_connectivity.png");
+      }
+
+      if (get_data_3_success == true) {
         $('#panel_title').css("color", "black");
         $('#panel_title').html("Make sure either D9 or D10 is enabled to set Logic to connect data feed to output");
         $('#panel_image').attr("src", "img/not_connected_to_outputs_connected_to_thingspeak_success_cross_connectivity.png");
@@ -291,6 +321,12 @@ function checkVisualStatus() {
         $('#panel_image').attr("src", "img/not_yet_connected_to_outputs_connected_to_thingspeak_success_cross_connectivity.png");
       }
 
+      if (show_panel_data_feed_3 == true) {
+        $('#panel_title').css("color", "black");
+        $('#panel_title').html("Enable either D9 or D10 to set logic for data feed");
+        $('#panel_image').attr("src", "img/not_yet_connected_to_outputs_connected_to_thingspeak_success_cross_connectivity.png");
+      }
+
       if (logic_constructed_data_feed_1 == true) {
         $('#panel_title').css("color", "black");
         $('#panel_title').html("Click Save to save current control panel setting");
@@ -298,6 +334,12 @@ function checkVisualStatus() {
       }
 
       if (logic_constructed_data_feed_2 == true) {
+        $('#panel_title').css("color", "black");
+        $('#panel_title').html("Click Save to save current control panel setting");
+        $('#panel_image').attr("src", "img/connected_to_thingspeak_success_cross_connectivity.png");
+      }
+
+      if (logic_constructed_data_feed_3 == true) {
         $('#panel_title').css("color", "black");
         $('#panel_title').html("Click Save to save current control panel setting");
         $('#panel_image').attr("src", "img/connected_to_thingspeak_success_cross_connectivity.png");
@@ -324,6 +366,16 @@ function checkVisualStatus() {
         $('#panel_image').attr("src", "img/device_connected_to_outputs.png");
       }
 
+      if (get_data_feed_3 == true) {
+        $('#panel_title').css("color", "black");
+        $('#panel_title').html("Retrieve data feed from another WearON device");
+        $('#panel_image').attr("src", "img/connected_to_thingspeak_failed_cross_connectivity.png");
+      } else {
+        $('#panel_title').css("color", "black");
+        $('#panel_title').html("Use Cross Connecitity Control Panel to control data from connected device");
+        $('#panel_image').attr("src", "img/device_connected_to_outputs.png");
+      }
+
       if (get_data_1_success == true) {
         $('#panel_title').css("color", "black");
         $('#panel_title').html("Make sure either D9 or D10 is enabled to set Logic to connect data feed to output");
@@ -331,6 +383,12 @@ function checkVisualStatus() {
       }
 
       if (get_data_2_success == true) {
+        $('#panel_title').css("color", "black");
+        $('#panel_title').html("Make sure either D9 or D10 is enabled to set Logic to connect data feed to output");
+        $('#panel_image').attr("src", "img/connected_to_thingspeak_success_cross_connectivity.png");
+      }
+
+      if (get_data_3_success == true) {
         $('#panel_title').css("color", "black");
         $('#panel_title').html("Make sure either D9 or D10 is enabled to set Logic to connect data feed to output");
         $('#panel_image').attr("src", "img/connected_to_thingspeak_success_cross_connectivity.png");
@@ -369,6 +427,18 @@ function checkVisualStatus() {
         $('#panel_image').attr("src", "img/connected_to_device_not_to_thingspeak.png");
       }
 
+      if (get_data_feed_3 == true) {
+        if ((logic_constructed_D9 == false) && (logic_constructed_D10 == false)) {
+          $('#panel_title').css("color", "black");
+          $('#panel_title').html("Retrieve data feed from another WearON device");
+          $('#panel_image').attr("src", "img/connected_to_device_not_to_thingspeak_failed_cross_connectivity.png");
+        }
+      } else {
+        $('#panel_title').css("color", "black");
+        $('#panel_title').html("App might take a while to connect to Thingspeak <br>if problem persists, please check whether input key is correct");
+        $('#panel_image').attr("src", "img/connected_to_device_not_to_thingspeak.png");
+      }
+
       if (get_data_1_success == true) {
         $('#panel_title').css("color", "black");
         $('#panel_title').html("Make sure either D9 or D10 is enabled to set Logic to connect data feed to output");
@@ -376,6 +446,12 @@ function checkVisualStatus() {
       }
 
       if (get_data_2_success == true) {
+        $('#panel_title').css("color", "black");
+        $('#panel_title').html("Make sure either D9 or D10 is enabled to set Logic to connect data feed to output");
+        $('#panel_image').attr("src", "img/connected_to_device_not_to_thingspeak_success_cross_connectivity.png");
+      }
+
+      if (get_data_3_success == true) {
         $('#panel_title').css("color", "black");
         $('#panel_title').html("Make sure either D9 or D10 is enabled to set Logic to connect data feed to output");
         $('#panel_image').attr("src", "img/connected_to_device_not_to_thingspeak_success_cross_connectivity.png");
@@ -393,6 +469,12 @@ function checkVisualStatus() {
         $('#panel_image').attr("src", "img/not_connected_to_thingspeak_success_cross_connectivity_1.png");
       }
 
+      if (show_panel_data_feed_3 == true) {
+        $('#panel_title').css("color", "black");
+        $('#panel_title').html("Enable either D9 or D10 to set logic for data feed");
+        $('#panel_image').attr("src", "img/not_connected_to_thingspeak_success_cross_connectivity_1.png");
+      }
+
       if (logic_constructed_data_feed_1 == true) {
         $('#panel_title').css("color", "black");
         $('#panel_title').html("Click Save to save current control panel setting");
@@ -400,6 +482,12 @@ function checkVisualStatus() {
       }
 
       if (logic_constructed_data_feed_2 == true) {
+        $('#panel_title').css("color", "black");
+        $('#panel_title').html("Click Save to save current control panel setting");
+        $('#panel_image').attr("src", "img/not_connected_to_thingspeak_success_cross_connectivity.png");
+      }
+
+      if (logic_constructed_data_feed_3 == true) {
         $('#panel_title').css("color", "black");
         $('#panel_title').html("Click Save to save current control panel setting");
         $('#panel_image').attr("src", "img/not_connected_to_thingspeak_success_cross_connectivity.png");
@@ -428,6 +516,16 @@ function checkVisualStatus() {
         $('#panel_image').attr("src", "img/connected_to_device_not_to_thingspeak_connected_to_outputs.png");
       }
 
+      if (get_data_feed_3 == true) {
+        $('#panel_title').css("color", "black");
+        $('#panel_title').html("Retrieve data feed from another WearON device");
+        $('#panel_image').attr("src", "img/not_connected_to_thingspeak_failed_cross_connectivity.png");
+      } else {
+        $('#panel_title').css("color", "black");
+        $('#panel_title').html("Use Cross Connecitity Control Panel to control data from connected device");
+        $('#panel_image').attr("src", "img/connected_to_device_not_to_thingspeak_connected_to_outputs.png");
+      }
+
       if (get_data_1_success == true) {
         $('#panel_title').css("color", "black");
         $('#panel_title').html("Make sure either D9 or D10 is enabled to set Logic to connect data feed to output");
@@ -435,6 +533,12 @@ function checkVisualStatus() {
       }
 
       if (get_data_2_success == true) {
+        $('#panel_title').css("color", "black");
+        $('#panel_title').html("Make sure either D9 or D10 is enabled to set Logic to connect data feed to output");
+        $('#panel_image').attr("src", "img/not_connected_to_thingspeak_success_cross_connectivity.png");
+      }
+
+      if (get_data_3_success == true) {
         $('#panel_title').css("color", "black");
         $('#panel_title').html("Make sure either D9 or D10 is enabled to set Logic to connect data feed to output");
         $('#panel_image').attr("src", "img/not_connected_to_thingspeak_success_cross_connectivity.png");

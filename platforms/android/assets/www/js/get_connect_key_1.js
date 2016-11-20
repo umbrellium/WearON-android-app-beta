@@ -101,7 +101,7 @@ function get_Data_feed_1_from_thingspeak() {
         function(data, status) {
             if (status == "success") {
                 data_feed_1_reading = parseInt(data); // parse the var into strictly number value
-                $("#DataFeed1_content").html("<b>Data Feed 1 Reading =" + data + "</b>");
+                $("#DataFeed1_content").html("<b>Data Feed 1 =" + data + "</b>");
                 $("#DataFeed1_content_status").html("Data obtained successfully");
             } else {
                 $("#DataFeed1_content_status").html("Error in obtaining data");
@@ -119,7 +119,7 @@ function Confirm_connect_1() {
                 get_data_1_success = true;
                 toggelgetDataFeed1();
                 $("#DataFeed1").show();
-                $("#DataFeed1_content").html("<span><b>Data Feed 1 Reading =" + data + "</b></span>");
+                $("#DataFeed1_content").html("<span><b>Data Feed 1 =" + data + "</b></span>");
                 $("#DataFeed1_content_status").html("Data obtained successfully");
                 gettingDataFeed1_Thingspeak();
             } else {

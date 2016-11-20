@@ -344,6 +344,8 @@ function useState() {
 		checkLogicD10_number();
 		checkLogicD9_number();
 		checkLogic_data_feed_1_number();
+		checkLogic_data_feed_2_number();
+		checkLogic_data_feed_3_number();
 
 	}
 

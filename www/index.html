@@ -34,8 +34,10 @@
     <script src="js/digital_pin_D10.js"></script>
     <script src="js/data_feed_1.js"></script>
     <script src="js/data_feed_2.js"></script>
+    <script src="js/data_feed_3.js"></script>
     <script src="js/get_connect_key_1.js"></script>
     <script src="js/get_connect_key_2.js"></script>
+    <script src="js/get_connect_key_3.js"></script>
     <script src="js/connectivity_ctrl_panel_save.js"></script>
     <script src="js/get_thingful_thing.js"></script>
     <script src="js/global_connectivity_ctrl_panel_save.js"></script>
@@ -179,6 +181,11 @@
     <div id="DataFeed2_content_status"></div>
     </div>
 
+    <div id="DataFeed3">
+    <span id="DataFeed3_content"> </span>
+    <div id="DataFeed3_content_status"></div>
+    </div>
+
     <div id="ThingfulFeed">
     <span id="ThingfulFeed_content"> </span>
     <div id="ThingfulFeed_content_status"></div>
@@ -320,6 +327,12 @@
             <button type="button" id="connect_data_set_2"onclick="toggelConnect_data_feed_2()" >Set Logic</button>
         </div>
 
+        <div id="DateFeed3Panel">
+            <div id="DataFeed3title"><b> Data Feed 3</b></div>
+            <button type="button" id="get_data_set_3" onclick="toggelgetDataFeed3()"> Retrieve</button> 
+            <button type="button" id="connect_data_set_3"onclick="toggelConnect_data_feed_3()" >Set Logic</button>
+        </div>
+
         <div id="SaveControlPanel_data_feed_1">
             <div id="saveStatetitle_data_feed_1"><b> Save Setting </b></div>
             <button id="saveState_data_feed_1" onclick="saveState_connectivity()"> Save </button>
@@ -371,6 +384,27 @@
         </div>
     </div></center>
 
+    <center><div id="get_data_set_3_panel">
+        <div id="get_data_set_3_title"><b>Input Connectivity Key</b></div>
+        <br>
+        <input type="text" id="key9" class="key" maxlength="3"> </input>
+        - <input type="text" id="key10" class="key" maxlength="3"> </input><br>
+        <span id="note">*case-sensitive*</span><br>
+        <button onclick="getKeyData_connectivity_3()" id="getData_connectivity_key_3">Get Data </button>
+        <br>
+        <button onclick="lastSavedConnectKey_3()" class= "useStoredConnectKey_3" ></button>
+        <div id="userConnectKeyContent_3">
+        <div id="ReadApi_3"></div>
+        <div id="channelID_3"></div>
+        <div id="channel_field_1_3"></div>
+        <div id="channel_field_2_3"></div>
+        </div>
+        <div id="confirmation_connect_3">
+        <button type="button" value="Confirm_connect_3" class = "Confirm_connect_3" onclick="Confirm_connect_3()"> Retrieve Data Set </button> 
+        <button type="button" class="restart_connect_3" onclick="restart_connect_3()"> Restart </button>
+        </div>
+    </div></center>
+
     <!-- logic connection panel for data feed 1 -->
     <center><div id="connect_data_feed_1_panel">
     <div id="connect_data_feed_1_title"><b>Construct logic for Data Feed 1</b></div>
@@ -407,6 +441,25 @@
     <div id="check_logic_status_data_feed_2_output"></div>
     <div id="check_overall_logic_status_data_feed_2"><b>-Logic: Unsuccessful-</b></div>
     <div id="close_panel_data_feed_2">(Click 'Close panel' when completed)</div>
+    </div></center>
+
+    <!-- logic connection panel for data feed 3 -->
+    <center><div id="connect_data_feed_3_panel">
+    <div id="connect_data_feed_3_title"><b>Construct logic for Data Feed 3</b></div>
+    <div id="instruction_logic_data_feed_3">Press buttons to switch inputs and key in number</div>
+
+    <div id="logic_statement_data_feed_3">
+    <span><b> if Val</b></span>  
+    <button id="greater_than_data_feed_3" onclick="checkLogic_data_feed_3_greater_than()"> < </button>
+    <input type="number" id="numbering_data_feed_3"maxlength="5" size="5" placeholder= "+000" max="1023" onchange="checkLogic_data_feed_3_number()"></input>
+    <span><b>, turn </b></span> 
+    <button id="select_output_data_feed_3" onclick="checkLogic_data_feed_3_output()">D9</button>
+    <button id="on_off_data_feed_3" onclick="checkLogic_data_feed_3_on_off()">OFF</button>
+    </div>
+    <div id="check_logic_status_data_feed_3_number"></div>
+    <div id="check_logic_status_data_feed_3_output"></div>
+    <div id="check_overall_logic_status_data_feed_3"><b>-Logic: Unsuccessful-</b></div>
+    <div id="close_panel_data_feed_3">(Click 'Close panel' when completed)</div>
     </div></center>
 <!--END App's Cross connectivity Control Panel -->
 

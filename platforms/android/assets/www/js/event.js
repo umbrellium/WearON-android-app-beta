@@ -50,9 +50,11 @@ function startApplication() {
     $("#connect_D10_panel").hide();
     $("#connect_data_feed_1_panel").hide();
     $("#connect_data_feed_2_panel").hide();
+    $("#connect_data_feed_3_panel").hide();
     $("#connect_thingful_data_panel").hide();
     $("#get_data_set_1_panel").hide();
     $("#get_data_set_2_panel").hide();
+    $("#get_data_set_3_panel").hide();
     $("#get_thingful_data_panel").hide();
   }
 
@@ -105,13 +107,16 @@ function openMainPage() {
   $("#connect_D10_panel").hide();
   $("#connect_data_feed_1_panel").hide();
   $("#connect_data_feed_2_panel").hide();
+  $("#connect_data_feed_3_panel").hide();
   $("#connect_thingful_data_panel").hide();
   $("#get_data_set_1_panel").hide();
   $("#get_data_set_2_panel").hide();
+  $("#get_data_set_3_panel").hide();
   $("#get_thingful_data_panel").hide();
   $('#confirm_connection_D9').hide();
   $('#connect_data_set_1').hide();
   $('#connect_data_set_2').hide();
+  $('#connect_data_set_3').hide();
   $('#connect_thingful').hide();
 }
 
