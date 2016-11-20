@@ -44,19 +44,15 @@ function readConnectKeyData_3() {
         document.getElementById("channelID_3").innerHTML = "No Channel ID found";
     }
 
-    if (keyContent_3[11] == "ON") { // check is user inputing any key in this catagory
+    if (keyContent_3[11] != "") { // check is user inputing any key in this catagory
 
         $("#channel_field_1_3").show();
-        $("#channel_field_2_3").hide();
-        document.getElementById("channel_field_1_3").innerHTML = "Channel Field 1 chosen";
-        channelField_3 = 1;
+        document.getElementById("channel_field_1_3").innerHTML = "Chosen Field: " + keyContent_3[11];
+        channelField_3 = keyContent_3[11];
         localStorage.channelField_3 = channelField_3;
     } else {
-        $("#channel_field_2_3").show();
-        $("#channel_field_1_3").hide();
-        document.getElementById("channel_field_2_3").innerHTML = "Channel Field 2 chosen";
-        channelField_3 = 2;
-        localStorage.channelField_3 = channelField_3;
+        $("#channel_field_1_3").show();
+        document.getElementById("channel_field_1_3").innerHTML = "No Field found";
     }
 
     if ((keyContent_3[3] == undefined) || (keyContent_3[7] == undefined)) {

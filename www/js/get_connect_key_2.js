@@ -44,19 +44,15 @@ function readConnectKeyData_2() {
         document.getElementById("channelID_2").innerHTML = "No Channel ID found";
     }
 
-    if (keyContent_2[11] == "ON") { // check is user inputing any key in this catagory
+    if (keyContent_2[11] != "") { // check is user inputing any key in this catagory
 
         $("#channel_field_1_2").show();
-        $("#channel_field_2_2").hide();
-        document.getElementById("channel_field_1_2").innerHTML = "Channel Field 1 chosen";
-        channelField_2 = 1;
+        document.getElementById("channel_field_1_2").innerHTML = "Chosen Field: " + keyContent_2[11];
+        channelField_2 = keyContent_2[11];
         localStorage.channelField_2 = channelField_2;
     } else {
-        $("#channel_field_2_2").show();
-        $("#channel_field_1_2").hide();
-        document.getElementById("channel_field_2_2").innerHTML = "Channel Field 2 chosen";
-        channelField_2 = 2;
-        localStorage.channelField_2 = channelField_2;
+        $("#channel_field_1_2").show();
+        document.getElementById("channel_field_1_2").innerHTML = "No Field found";
     }
 
     if ((keyContent_2[3] == undefined) || (keyContent_2[7] == undefined)) {
@@ -135,7 +131,7 @@ function restart_connect_2() {
     $("#channelID_2").hide();
     $("#channel_field_1_2").hide();
     $("#channel_field_2_2").hide();
-    $("#key7").val("");//data_feed_2
-    $("#key8").val("");//data_feed_2
+    $("#key7").val(""); //data_feed_2
+    $("#key8").val(""); //data_feed_2
 
 }
