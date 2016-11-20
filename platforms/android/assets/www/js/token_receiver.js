@@ -180,6 +180,8 @@ function confirm() {
             $('#connectA4status').hide();
             $('.connectA3').hide();
             $('#connectA3status').hide();
+            $('.connectA2').hide();
+            $('#connectA2status').hide();
             $('#tokenKeyPage').hide();
             $("#confirmationPage").hide();
             checkVisualStatus();

@@ -31,6 +31,7 @@ function startApplication() {
     $("#confirmationPage").hide();
     $("#anotherToken").hide();
     $("#AppContent").hide();
+    $('#connectA2error').hide();
     $('#connectA3error').hide();
     $('#connectA4error').hide();
     $('#connectA5error').hide();
@@ -79,6 +80,7 @@ function openMainPage() {
   $("#anotherToken").hide();
 
   $("#AppContent").hide();
+  $('#connectA2error').hide();
   $('#connectA3error').hide();
   $('#connectA4error').hide();
   $('#connectA5error').hide();

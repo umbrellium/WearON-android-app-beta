@@ -390,6 +390,11 @@ app.disconnect = function(errorMessage) {
 			$('.connectA3').css("background-color", "white");
 			$('.connectA3').css("color", "black");
 		};
+		if (analog_enabled_A2 == true) {
+			app.toggelAnalogA2();
+			$('.connectA2').css("background-color", "white");
+			$('.connectA2').css("color", "black");
+		};
 		if (geolocation_enabled == true) {
 			app.toggleGeoTrack();
 		};

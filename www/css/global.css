@@ -135,7 +135,7 @@
     vertical-align: bottom
 }
 
-#connectA3status, #connectA5status, #connectA4status, #geoStatus, #storedData, #panel_title, #footnote, #note,#DataFeed1_content_status, 
+#connectA2status, #connectA3status, #connectA5status, #connectA4status, #geoStatus, #storedData, #panel_title, #footnote, #note,#DataFeed1_content_status, 
 #ThingfulFeed_content_status {
 	font-size: 12px;
 	opacity:0.5;
@@ -147,16 +147,16 @@
 	color:red;	
 }
 
-#A3Bar, #A4Bar, #A5Bar, #GEOreading, #DataFeed1, #ThingfulFeed{
+#A2Bar, #A3Bar, #A4Bar, #A5Bar, #GEOreading, #DataFeed1, #ThingfulFeed{
   font-size: 30px;
   margin:5vw;
 }
 
-#connectA5status, #connectA4status, #connectA3status, #geoStatus,#DataFeed1_content_status, #ThingfulFeed_content_status{
+#connectA5status, #connectA4status, #connectA3status,#connectA2status, #geoStatus,#DataFeed1_content_status, #ThingfulFeed_content_status{
 	margin-top: 5px;
 }
 
-#connectA3error,#connectA4error, #connectA5error{
+#connectA2error,#connectA3error,#connectA4error, #connectA5error{
 	font-size: 12px;
 	opacity:0.5;
 	color: red;
@@ -171,7 +171,7 @@
 	opacity:0.5;
 }
 
-#valueA3, #valueA5, #valueA4, #geolocationValue{
+#valueA2,#valueA3, #valueA5, #valueA4, #geolocationValue{
 	margin-top: 10px;
 	margin-bottom: 10px;
 
@@ -181,7 +181,7 @@
 	font-size: 10px;
 }
 
-.enableA3, .connectA3, .enableA5, .connectA5, .enableA4, .connectA4, .enableGeoTrack, 
+.enableA2, .connectA2,.enableA3, .connectA3, .enableA5, .connectA5, .enableA4, .connectA4, .enableGeoTrack, 
 .connectGeo, .enableD9, .connectD9, .enableD10, .connectD10 ,
 #saveState, #useState,  #get_data_set_1, #connect_data_set_1, 
 #saveState_data_feed_1, #useState_data_feed_1, #get_thingful, #connect_thingful,
@@ -195,7 +195,7 @@
 	margin:4px;
 }
 
-.enableA3, .enableA4, .enableA5, .enableD9, .connectD9, .enableD10, .connectD10 ,  #get_data_set_1, #connect_data_set_1,
+.enableA2,.enableA3, .enableA4, .enableA5, .enableD9, .connectD9, .enableD10, .connectD10 ,  #get_data_set_1, #connect_data_set_1,
 #get_thingful, #connect_thingful {
 	padding-left: 18px;
 	padding-right: 18px;
@@ -232,7 +232,7 @@
 }
 
 
-#A3ControlPanel,#A4ControlPanel, #A5ControlPanel, #GEOControlPanel, #SaveControlPanel, #D9ControlPanel, #D10ControlPanel
+#A2ControlPanel,#A3ControlPanel,#A4ControlPanel, #A5ControlPanel, #GEOControlPanel, #SaveControlPanel, #D9ControlPanel, #D10ControlPanel
 , #DateFeed1Panel, #SaveControlPanel_data_feed_1, #thingfulPanel, #SaveControlPanel_thingful {
     display: inline-block;
     width:100px;
@@ -242,7 +242,7 @@
 
 }
 
-#A3title, #A4title, #A5title, #Geotitle, #saveStatetitle,#D9title, #D10title, #DataFeed1title , #saveStatetitle_data_feed_1, 
+#A2title,#A3title, #A4title, #A5title, #Geotitle, #saveStatetitle,#D9title, #D10title, #DataFeed1title , #saveStatetitle_data_feed_1, 
 #thingful_panel_title, #saveStatetitle_thingful {
 	margin-top: 4px;
 	color: black;
