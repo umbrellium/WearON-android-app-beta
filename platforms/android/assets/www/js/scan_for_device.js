@@ -358,6 +358,8 @@ app.disconnect = function(errorMessage) {
 		$("#connect_D10_panel").hide();
 		$("#connect_data_feed_1_panel").hide();
 		$("#get_data_set_1_panel").hide();
+		$("#connect_data_feed_2_panel").hide();
+		$("#get_data_set_2_panel").hide();
 		$('#scanStatus').empty();
 		$('#scanResultView').hide();
 		$('#scanResultView').empty();
@@ -450,8 +452,28 @@ app.disconnect = function(errorMessage) {
 			$('#numbering_data_feed_1').val("");
 		}
 
+		if (logic_constructed_data_feed_2 == true) {
+			logic_constructed_data_feed_2 = false;
+			$('#connect_data_set_2').css("background-color", "white");
+			$('#connect_data_set_2').css("color", "black");
+			$('#connect_data_set_2').text('Set Logic');
+			greater_than_DataFeed2 = 1;
+			D10_on_DataFeed2 = false;
+			on_DataFeed2 = false;
+			check_number_DataFeed2 = false;
+			numDataFeed2 = "";
+			$('#numbering_data_feed_2').val("");
+			checkLogic_data_feed_2_number();
+		} else {
+			$('#numbering_data_feed_2').val("");
+		}
+
 		if (get_data_feed_1 == true) {
 			toggelgetDataFeed1();
+		}
+
+		if (get_data_feed_2 == true) {
+			toggelgetDataFeed2();
 		}
 
 		if (get_data_1_success == true) {
@@ -462,15 +484,28 @@ app.disconnect = function(errorMessage) {
 			$('#DataFeed1').hide();
 		}
 
+		if (get_data_2_success == true) {
+			get_data_2_success = false;
+			toggelgetDataFeed2();
+			$('#get_data_set_2_panel').hide();
+			//hide the data feed content on main content screen
+			$('#DataFeed2').hide();
+		}
+
 		if (show_panel_data_feed_1 == true) {
 			toggelConnect_data_feed_1();
 		}
 
+		if (show_panel_data_feed_2 == true) {
+			toggelConnect_data_feed_2();
+		}
+
 		clearInterval(getDataFeed1_Thingspeak);
+		clearInterval(getDataFeed2_Thingspeak);
+
 		//END cross connectivity panel //////
 
 		// for global connectivity panel /////
-
 		if (logic_constructed_thingful_data_feed == true) {
 			logic_constructed_thingful_data_feed = false;
 			$('#connect_thingful').css("background-color", "white");
